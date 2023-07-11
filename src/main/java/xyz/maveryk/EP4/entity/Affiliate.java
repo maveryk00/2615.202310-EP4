@@ -3,10 +3,12 @@ package xyz.maveryk.EP4.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "tbl_afiliados")
 public class Affiliate {
 

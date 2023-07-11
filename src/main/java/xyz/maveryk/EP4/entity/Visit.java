@@ -3,14 +3,17 @@ package xyz.maveryk.EP4.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Data
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "tbl_vitas")
 public class Visit {
 
@@ -28,8 +31,7 @@ public class Visit {
     @Column(name = "fecha")
     private Date date;
 
-    @Temporal(TemporalType.TIME)
-    @Column(name = "hora")
-    private Time time;
+    @Column(name = "hora", columnDefinition = "TIME")
+    private LocalTime time;
 
 }
