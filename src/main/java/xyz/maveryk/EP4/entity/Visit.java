@@ -19,8 +19,10 @@ public class Visit {
     private Long id;
     @Column(length = 100)
     private String local;
-    @Column(length = 8, unique = true)
-    private String dni;
+
+    @ManyToOne
+    @JoinColumn(name = "dni", referencedColumnName = "dni")
+    private Affiliate affiliate;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "fecha")

@@ -7,8 +7,8 @@ import lombok.Data;
 @Data
 @Entity
 @AllArgsConstructor
-@Table(name = "tbl_clientes")
-public class Customer {
+@Table(name = "tbl_afiliados")
+public class Affiliate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
