@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/visits")
-public class VisitHandle {
+public class VisitHandler {
 
     private final VisitService visitService;
 
