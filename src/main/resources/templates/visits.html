@@ -34,6 +34,49 @@
 </nav>
 
 <div class="container">
+
+    <div class="row">
+        <div class="col s12">
+            <h3>Registrar nueva visita</h3>
+
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <select id="local">
+                        <option value="" disabled selected>Local</option>
+                        <option value="La Molina">La Molina</option>
+                        <option value="San Borja">San Borja</option>
+                        <option value="Miraflores">Miraflores</option>
+                    </select>
+                    <label>Local</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input id="dni" type="text" maxlength="8" class="validate">
+                    <label for="dni">DNI</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12 m6">
+                    <input id="date" type="text" class="datepicker validate">
+                    <label for="date">Fecha</label>
+                </div>
+
+                <div class="input-field col s12 m6">
+                    <input id="time" type="text" class="timepicker validate">
+                    <label for="time">Hora</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <button id="btn-register" class="btn waves-effect waves-light">Registrar
+                    <i class="material-icons right">create</i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
     <table class="highlight">
         <thead>
         <tr>

@@ -1,11 +1,11 @@
 package xyz.maveryk.EP4.api;
 
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import xyz.maveryk.EP4.dto.VisitDTO;
+import xyz.maveryk.EP4.response.VisitCreateResponse;
 import xyz.maveryk.EP4.service.VisitService;
 
 import java.util.List;
@@ -20,6 +20,12 @@ public class VisitHandler {
     @GetMapping({"", "/"})
     public ResponseEntity<List<VisitDTO>> getAll() {
         return ResponseEntity.ok(visitService.getAll());
+    }
+
+    @PostMapping({"", "/"})
+    public ResponseEntity<VisitCreateResponse> register(@RequestBody VisitDTO visitDTO) {
+        VisitCreateResponse response = visitService.save(visitDTO);
+        return ResponseEntity.status(HttpStatus.valueOf(response.code)).body(response);
     }
 
 
