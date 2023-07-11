@@ -19,6 +19,19 @@
             margin-left: 15px;
             vertical-align: text-top;
         }
+
+        input {
+            margin: 0 !important;
+        }
+
+        .input-field {
+            width: 100%;
+            margin: 0 !important;
+        }
+
+        .input-field>label:not(.label-icon).active {
+            transform: translateY(-5px) scale(.8);
+        }
     </style>
 
 </head>
@@ -77,7 +90,7 @@
         </div>
     </div>
 
-    <table class="highlight">
+    <table id="tbl-visits" class="highlight">
         <thead>
         <tr>
             <th>Id</th>
@@ -85,9 +98,9 @@
             <th>DNI</th>
             <th>Fecha</th>
             <th>Hora</th>
+            <th></th>
         </tr>
         </thead>
-
         <tbody>
         </tbody>
     </table>

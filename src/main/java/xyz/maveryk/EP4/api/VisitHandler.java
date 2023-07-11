@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import xyz.maveryk.EP4.dto.VisitDTO;
-import xyz.maveryk.EP4.response.VisitCreateResponse;
+import xyz.maveryk.EP4.response.VisitResponse;
 import xyz.maveryk.EP4.service.VisitService;
 
 import java.util.List;
@@ -23,10 +23,22 @@ public class VisitHandler {
     }
 
     @PostMapping({"", "/"})
-    public ResponseEntity<VisitCreateResponse> register(@RequestBody VisitDTO visitDTO) {
-        VisitCreateResponse response = visitService.save(visitDTO);
+    public ResponseEntity<VisitResponse> register(@RequestBody VisitDTO visitDTO) {
+        VisitResponse response = visitService.save(visitDTO);
         return ResponseEntity.status(HttpStatus.valueOf(response.code)).body(response);
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<VisitResponse> update(@PathVariable("id") Long id, @RequestBody VisitDTO visitDTO) {
+        visitDTO.setId(id);
+        VisitResponse response = visitService.update(visitDTO);
+        return ResponseEntity.status(HttpStatus.valueOf(response.code)).body(response);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<VisitResponse> delete(@PathVariable("id") Long id) {
+        VisitResponse response = visitService.delete(id);
+        return ResponseEntity.status(HttpStatus.valueOf(response.code)).body(response);
+    }
 
 }

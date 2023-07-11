@@ -6,9 +6,9 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class VisitCreateResponse {
+public class VisitResponse {
 
-    @JsonProperty("code")
+    @JsonProperty("status")
     public Integer code;
 
     @JsonProperty("message")
